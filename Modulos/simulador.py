@@ -1,3 +1,9 @@
+# este modulo contiene funciones para simular un Autómata de Pila Determinista (APD)
+
+
+# esta funcion simula un Autómata de Pila Determinista (APD) paso a paso
+# mostrando el estado actual, la pila y las transiciones realizadas
+# y determina si la palabra es aceptada o rechazada según el tipo de aceptación
 def simular_apd(transiciones, estado_inicial, estados_finales, palabra, tipo_aceptacion):
     estado_actual = estado_inicial
     pila = ['Z']
@@ -21,7 +27,7 @@ def simular_apd(transiciones, estado_inicial, estados_finales, palabra, tipo_ace
             if simbolo_entrada != 'ε':
                 i += 1
         else:
-            print(f"❌ No hay transición definida para ({estado_actual}, {simbolo_entrada}, {cima_pila})")
+            print(f"No hay transición definida para ({estado_actual}, {simbolo_entrada}, {cima_pila})")
             break
 
     print(f"\nEstado final alcanzado: {estado_actual}")
@@ -29,15 +35,15 @@ def simular_apd(transiciones, estado_inicial, estados_finales, palabra, tipo_ace
 
     if tipo_aceptacion == 'estado_final':
         if estado_actual in estados_finales:
-            print("✅ La palabra fue ACEPTADA por estado final.")
+            print("La palabra fue ACEPTADA por estado final.")
             return True
         else:
-            print("❌ La palabra fue RECHAZADA.")
+            print("La palabra fue RECHAZADA.")
             return False
     elif tipo_aceptacion == 'pila_vacia':
         if pila == [] or pila == ['Z']:
-            print("✅ La palabra fue ACEPTADA por pila vacía.")
+            print("La palabra fue ACEPTADA por pila vacía.")
             return True
         else:
-            print("❌ La palabra fue RECHAZADA (la pila no está vacía).")
+            print("La palabra fue RECHAZADA (la pila no está vacía).")
             return False

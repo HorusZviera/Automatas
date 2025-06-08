@@ -1,13 +1,15 @@
-from entrada import (
+# Se importa todos los modulos 
+from Modulos.entrada import (
     solicitar_alfabeto,
     solicitar_estado_inicial,
     solicitar_estados_finales,
     solicitar_palabra,
     menu_tipo_aceptacion
 )
-from transiciones import solicitar_transiciones
-from simulador import simular_apd
+from Modulos.transiciones import solicitar_transiciones
+from Modulos.simulador import simular_apd
 
+# main que ejecuta el programa
 def main():
     alfabeto = solicitar_alfabeto()
     estado_inicial = solicitar_estado_inicial()
