@@ -22,5 +22,4 @@ __pycache__/
 # Entornos de prueba
 .eggs/
 *.egg-info/
-dist/
-build/
+
